@@ -20,6 +20,7 @@ Crea tu propia rama en el repositorio de tu proyecto para hacer las modificacion
 #Solución desarollada
 
 #Decisiones de desarollo
+
 Se decide el crear una clase Shot en el proyecto de tipo abstract esto permitirá que en el caso de que se quiera desarollar a futuro,
 otro tipo de contador de tiros son otros parámetros simplemente se deba de crear otra clase que here de la clase ShotC y sobre escribir sus métodos.
 En este caso se pido la implementación de dos tipos de contadores; uno que cuente los tiros realizados en el gua y otro que cuente los tiros 
@@ -33,6 +34,7 @@ y ShipShot tengan una única razón de cambio. A su vez permitimos que este cód
 y podemos añadir nuevas funcionalidades a nuestro código según Open Close Principle.
 
 #Ubicación de la decisión de desarollo.
+
 Al pedir como un requerimiento que la cuenta debe ser de ambos jugadores y no de uno y de otro por separado la clase que debe 
 de tener al responsabilidad de crear objetos de tipo ShipShot y WaterShot es la clase Game. Esta será la encargada de avisarle a las otras clases ya 
 mencionadas cuando deben de sumar uno al contador. Ahora, Porque razón se opto por darle a Game dicha responsabilidad? Por el simple hecho que ella es la
@@ -40,10 +42,12 @@ mencionadas cuando deben de sumar uno al contador. Ahora, Porque razón se opto 
 disparo hacia donde y saber el resultado de ella. Es la clase Experta.
 
 #Testeo
+
 Para testear los métodos y su funcionamiento se creo una clase de tipo test en LibraryTests llamada ShotCTest. En esta simula el registro, creación de un 
 player y como estos se atacan para asi verificar que el numero del contador aumenta correctamente.
 
 #Implementación del handler ShotCountHandler
+
 Se crea el handler con la keyword /count la cual podrá ser seleccionada en cualquier momento siempre y cuando cabe aclarar el usuario este en jugando, 
 por lo que antes deberá de inscribirse en una partida para poder ver el contador por obvias razones. Puede presionar /WaterShotCount o /ShipShotCount
 durante la partida para observar el total de tiros realizados a barco a al agua.
