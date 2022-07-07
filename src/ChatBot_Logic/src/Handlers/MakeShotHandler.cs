@@ -80,7 +80,7 @@ namespace ChatBot_Logic.src.Handlers
                     if (chainData.userPostionHandler[from].Count == 0)
                     {
                         chainData.userPostionHandler[from].Add("/atacarEnemigo"); //Añadimos el nuevo handler que se esta ejecutando.
-                        response = $"Es hora de que realizes tu ataque a tu enemigo {enemy.PlayerName}, escribe la coordenada.";
+                        response = $"Es hora de que realizes tu ataque a tu enemigo {enemy.PlayerName}, escribe la coordenada. /WaterShotCount, /ShipShotCount";
                         this.Keywords.Add(from); // Captamos el segundo mensaje que sea enviado luego de esta response, añadiendo el id del Usuario a las Keywords
                         return true;
                     }

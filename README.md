@@ -19,31 +19,32 @@ Crea tu propia rama en el repositorio de tu proyecto para hacer las modificacion
 
 #Solución desarollada
 
-#Deciciones de desarollo
-Se decide el crear una clase Shot en el proyecto de tipo abstract esto permitira que en el caso de que se quiera desarollar a futuro,
-otro tipo de contador de tiros son otros parametros simplemente se deba de crear otra clase que here de la clase ShotC y sobreescribir sus metodos.
-En este caso se pido la implementtacion de dos tipos de contadores; unno que cuente los tiros realizados en el gua y otro que cuente los tiros 
-que fueron hechos a barcos. Por esta misma razon se implemento la clase WaterShot y ShipShot que sobre escriben el metodo addCount respectivamente.
-Ahora, por que razon se decidio el crear dos clases que tecnicamente hacen lo mismo? Si se observan el codigo se podra notar que la logica del metodo
-AddCount en WaterShot y ShipShot es la misma pero la diferencia esta en que ambas tienen una atributo de tipo private que lleva centas de cosas diferentes.
-Una solucion a eso pudo haber sido la de poner dos variables en la misma clase y que una cuenta cada cosa pero no estariamos cumpliendo el patron SRP,
-ya que esta supuiesta clase con dos atributos tendria la responsabilidad de cambio en el caso que que queramos modificar como se cuentan los tiros 
-a los barcos o los tiros al agua. Asi que segrgamos dichios funcionamientos creando la clase base ShotC y a su vez permitimos que cada clase tanto WaterShot
-y ShipShot tengan una unica razon de cambio. A su vez permitimos que este codigo este cerrado a la modificacion y aboerto a la extension por el hecho que extendemos la clase Shot
-y podemos añadir nuevas funcionalidades a nuestro codigo segun Open Close Principle.
+#Decisiones de desarollo
+Se decide el crear una clase Shot en el proyecto de tipo abstract esto permitirá que en el caso de que se quiera desarollar a futuro,
+otro tipo de contador de tiros son otros parámetros simplemente se deba de crear otra clase que here de la clase ShotC y sobre escribir sus métodos.
+En este caso se pido la implementación de dos tipos de contadores; uno que cuente los tiros realizados en el gua y otro que cuente los tiros 
+que fueron hechos a barcos. Por esta misma razón se implemento la clase WaterShot y ShipShot que sobre escriben el método addCount respectivamente.
+Ahora, por que razón se decidió el crear dos clases que técnicamente hacen lo mismo? Si se observan el código se podrá notar que la lógica del método
+AddCount en WaterShot y ShipShot es la misma pero la diferencia esta en que ambas tienen una atributo de tipo private que lleva cuentas de cosas diferentes.
+Una solución a eso pudo haber sido la de poner dos variables en la misma clase y que una cuenta cada cosa pero no estaríamos cumpliendo el patron SRP,
+ya que esta supuesta clase con dos atributos tendría la responsabilidad de cambio en el caso que que queramos modificar como se cuentan los tiros 
+a los barcos o los tiros al agua. Asi que segregamos dichos funcionamientos creando la clase base ShotC y a su vez permitimos que cada clase tanto WaterShot
+y ShipShot tengan una única razón de cambio. A su vez permitimos que este código este cerrado a la modificación y abierto a la extension por el hecho que extendemos la clase Shot
+y podemos añadir nuevas funcionalidades a nuestro código según Open Close Principle.
 
-#Ubicación de la decición de desarollo.
+#Ubicación de la decisión de desarollo.
 Al pedir como un requerimiento que la cuenta debe ser de ambos jugadores y no de uno y de otro por separado la clase que debe 
 de tener al responsabilidad de crear objetos de tipo ShipShot y WaterShot es la clase Game. Esta será la encargada de avisarle a las otras clases ya 
-mencionadas cuando deben de sumar uno al contador. Ahora, Porque razón se opto por darle a Game dicha responsabilidad? Por el simple hehco que ella es la
-unica clase en todo el programa que conoce a los dos jugadores involucrados en la insatncia juego y, por lo tanto. La unica capaz de saber que jugador
+mencionadas cuando deben de sumar uno al contador. Ahora, Porque razón se opto por darle a Game dicha responsabilidad? Por el simple hecho que ella es la
+única clase en todo el programa que conoce a los dos jugadores involucrados en la instancia juego y, por lo tanto. La única capaz de saber que jugador
 disparo hacia donde y saber el resultado de ella. Es la clase Experta.
 
 #Testeo
-Para testear los metodos y su funcionamiento se creo una clase de tipo test en LibraryTests llamada ShotCTest. En esta simula el registro, creacion de un 
+Para testear los métodos y su funcionamiento se creo una clase de tipo test en LibraryTests llamada ShotCTest. En esta simula el registro, creación de un 
 player y como estos se atacan para asi verificar que el numero del contador aumenta correctamente.
 
-#Implementacion del handler ShotCountHandler
-Se crea el handler con la keyword /count la cual podra ser seleccionada en cualquier momento siempre y cuando cabe aclarar el usuario este en jugando, 
-por lo que antes debera de inscribirse en una partida para poder ver el contador por obvias razones. Puede presionar /WaterShotCount o /ShipShotCount
-durante la partida para obseravr el total de tiros realizados a barco a al agua.
+#Implementación del handler ShotCountHandler
+Se crea el handler con la keyword /count la cual podrá ser seleccionada en cualquier momento siempre y cuando cabe aclarar el usuario este en jugando, 
+por lo que antes deberá de inscribirse en una partida para poder ver el contador por obvias razones. Puede presionar /WaterShotCount o /ShipShotCount
+durante la partida para observar el total de tiros realizados a barco a al agua.
+Se verifico que los test realizados se ejecuten correctamente, lamentablemente no se ha podido testear el funcionamiento correcto del bot en telegram por no disponer de dos cuentas para el testeo. Se creo un handler especifico que pide que counter mostrar o sino se implemento una funcionalidad similar en MakeShotHandler ya que esta clase como tal es un bucle del cual no se puede salir por lo cual si dentro de esta clase se ejecuta la keyword del handler hecho para los counters no se va a ejecutar por eso mismo se modifico este handler para que se pueda acceder dentro de este igualmente.
