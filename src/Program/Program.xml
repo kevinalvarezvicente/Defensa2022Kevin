@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Program</name>
+    </assembly>
+    <members>
+        <member name="T:PII_ENTREGAFINAL_G8.src.Program.Program">
+            <summary>
+            Programa de consola de demostración.
+            </summary>
+        </member>
+        <member name="M:PII_ENTREGAFINAL_G8.src.Program.Program.Main">
+            <summary>
+            Punto de entrada al programa principal.
+            </summary>
+        </member>
+    </members>
+</doc>
