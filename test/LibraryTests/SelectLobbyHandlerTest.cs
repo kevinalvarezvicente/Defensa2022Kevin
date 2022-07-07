@@ -1,9 +1,9 @@
-using System.Collections.ObjectModel;
 using ChatBot_Logic.src.Handlers;
 using ChatBot_Logic.src.HandlersConfiguration;
 using ClassLibrary;
 using NUnit.Framework;
 using PII_ENTREGAFINAL_G8.src.Library;
+using System.Collections.ObjectModel;
 using Telegram.Bot.Types;
 
 namespace LibraryTests
@@ -47,7 +47,7 @@ namespace LibraryTests
             UsersContainer.AddUser(matias);
             PII_ENTREGAFINAL_G8.src.Library.User ActiveUser = UsersContainer.GetUSerByID(2046982637);
             Player player = new Player(ActiveUser);
-            
+
             IHandler result = handler.Handle(message, out response);
 
             Assert.That(response, Is.EqualTo("¡Has seleccionado las 🇦🇷 Malvinas 🇦🇷 de 7 hectareas!. "

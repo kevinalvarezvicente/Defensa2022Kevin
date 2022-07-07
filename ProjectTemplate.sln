@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{BE2270FE-A
 	ProjectSection(SolutionItems) = preProject
 		..\..\appsettings.json = ..\..\appsettings.json
 		docs\Doxify = docs\Doxify
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4609408A-2219-49AA-87F2-4A5D8B0B25F6}"

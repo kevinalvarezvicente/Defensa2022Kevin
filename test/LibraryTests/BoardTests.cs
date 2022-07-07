@@ -14,7 +14,7 @@ namespace LibraryTests
         [Test]
         public void TestBigBoardException()
         {
-            Assert.Throws<BoardException>(() =>new Board(25));
+            Assert.Throws<BoardException>(() => new Board(25));
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace LibraryTests
         [Test]
         public void TestSmallBoardException()
         {
-            Assert.Throws<BoardException>(() =>new Board(0));
+            Assert.Throws<BoardException>(() => new Board(0));
         }
 
 
@@ -31,7 +31,8 @@ namespace LibraryTests
         /// se prueba un board de 10 de Maldivas, 100 porque 10*10 es 100
         /// </summary>
         [Test]
-        public void MakeBoard10(){
+        public void MakeBoard10()
+        {
             Board board1 = new Board(10);
             Assert.AreEqual(100, board1.GameBoard.Length);
         }
@@ -40,7 +41,8 @@ namespace LibraryTests
         /// se prueba la maxima cantidad de barcos
         /// </summary>
         [Test]
-        public void MaxShipsQuantity(){
+        public void MaxShipsQuantity()
+        {
             Board board1 = new Board(10);
             Assert.AreEqual(5, board1.MaxShipsQuantity);
         }
@@ -48,7 +50,8 @@ namespace LibraryTests
         /// Se testea hacer un tablero de Donbas
         /// </summary>
         [Test]
-        public void MakeBoard15(){
+        public void MakeBoard15()
+        {
             Board board1 = new Board(15);
             Assert.AreEqual(225, board1.GameBoard.Length);
         }
@@ -57,7 +60,8 @@ namespace LibraryTests
         /// Se testea hacer un Tablero de Laos
         /// </summary>
         [Test]
-        public void MakeBoard20(){
+        public void MakeBoard20()
+        {
             Board board1 = new Board(20);
             Assert.AreEqual(400, board1.GameBoard.Length);
 

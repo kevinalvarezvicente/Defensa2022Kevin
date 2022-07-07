@@ -14,14 +14,18 @@ namespace ChatBot_Logic.src.Handlers_Configuration
         /// </summary>
         public static void InitializeHandlers()
         {
-            firstHandler = new HelloHandler(
+            firstHandler =
+
+            new HelloHandler(
+
                 new RegisterUserHandler(
                     new BattlePlacerHandler(
                         new SelectLobbyHandler(
                             new JoinPlayerHandler(
+                                new ShotCountHandler(
                                 new PlaceShipHandler(
                                     new MakeShotHandler(
-                                    new GoodByeHandler(null))))))));
+                                    new GoodByeHandler(null)))))))));
         }
 
         /// <summary>

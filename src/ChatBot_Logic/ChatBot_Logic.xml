@@ -302,6 +302,28 @@
             <param name="response">Respuesta del bot</param>
             <returns>retorna un booleano de que será true si trabaja como corresponde</returns>
         </member>
+        <member name="T:ChatBot_Logic.src.Handlers.ShotCountHandler">
+            <summary>
+            Handler que cuenta la cantidad de tiros
+            Es subclase de BaseHandler
+            Forma parte de Chain of fResponsibility
+            </summary>
+        </member>
+        <member name="M:ChatBot_Logic.src.Handlers.ShotCountHandler.#ctor(ChatBot_Logic.src.HandlersConfiguration.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:ChatBot_Logic.src.Handlers.ShotCountHandler"/>. Esta clase procesa el mensaje "/count".
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:ChatBot_Logic.src.Handlers.ShotCountHandler.InternalHandle(Telegram.Bot.Types.Message,System.String@)">
+            <summary>
+            Es el método donde se trabaja todo lo del handler.
+            Procesa el mensaje "/count"
+            </summary>
+            <param name="message">Mensaje que recibe</param>
+            <param name="response">Respuesta del bot</param>
+            <returns>retorna un booleano de que será true si trabaja como corresponde</returns>
+        </member>
         <member name="T:ChatBot_Logic.src.HandlersConfiguration.BaseHandler">
             <summary>
             Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una

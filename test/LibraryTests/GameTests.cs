@@ -213,7 +213,7 @@ namespace LibraryTests
             player.AddPlayerShipBoard(new ShipBoard(10));
             player.AddPlayerShotBoard(new ShotBoard(10));
             LobbyContainer.AddPlayer(player);
-            player.MakeShot("12","🟣");
+            player.MakeShot("12", "🟣");
             Assert.AreEqual("🟣", player.GetPlayerShotBoard().GameBoard[1, 2]);
         }
         /// <summary>

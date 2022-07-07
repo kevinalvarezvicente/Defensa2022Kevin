@@ -35,6 +35,7 @@ namespace ChatBot_Logic.src.Handlers
 
             if (this.CanHandle(message))
             {
+
                 if (chainData.userPostionHandler[from].Count > 0)
                 {
                     if (!chainData.userPostionHandler[from][0].Equals("/atacarEnemigo"))
@@ -44,6 +45,18 @@ namespace ChatBot_Logic.src.Handlers
                 }
 
                 Game game = GamesContainer.VerifyUserOnGame(message.From.Id);
+
+                if (message.Text == "/WaterShotCount")
+                {
+                    response = game.GetWaterShot.ToString();
+                    return true;
+                }
+                if (message.Text == "/ShipShotCount")
+                {
+                    response = game.GetWaterShot.ToString();
+                    return true;
+                }
+
                 if (game.Active_Player == null)
                 {
                     for (int i = 0; i < game.PlayersList.Count; i++)

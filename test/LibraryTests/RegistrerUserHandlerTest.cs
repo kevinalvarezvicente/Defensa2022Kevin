@@ -1,8 +1,8 @@
-using System.Collections.ObjectModel;
 using ChatBot_Logic.src.Handlers;
 using ChatBot_Logic.src.HandlersConfiguration;
 using ClassLibrary;
 using NUnit.Framework;
+using System.Collections.ObjectModel;
 using Telegram.Bot.Types;
 
 namespace LibraryTests

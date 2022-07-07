@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_Logic.Shot;
+using System;
 using System.Collections.Generic;
 
 namespace PII_ENTREGAFINAL_G8.src.Library
@@ -16,7 +17,6 @@ namespace PII_ENTREGAFINAL_G8.src.Library
     /// </summary>
     public class Game
     {
-
         /// <summary>
         ///El campo estático currentID almacena el ID de usuario de la última persona que ha sido creado.
         /// </summary>
@@ -26,6 +26,10 @@ namespace PII_ENTREGAFINAL_G8.src.Library
         /// </summary>
         /// <value>Cada usuario tiene el suyo</value>
         public int GameId { get; private set; }
+
+        ShipShot shipShot;
+        WaterShot waterShot;
+
         /// <summary>
         /// Cada partida se guarda con la fecha de comienzo
         /// </summary>
@@ -39,6 +43,28 @@ namespace PII_ENTREGAFINAL_G8.src.Library
         /// Atributo de la partida, el oponente
         /// </summary>
         private Player inactive_Player = null;
+        /// <summary>
+        /// Accede a ShipShot
+        /// </summary>
+        /// <value>retorna la cantidad de tiros a barcos</value>
+        public int GetShipShot
+        {
+            get
+            {
+                return this.shipShot.ShipShopCount;
+            }
+        }
+        /// <summary>
+        /// Accede a WaterShot
+        /// </summary>
+        /// <value>retorna la cantidad de tiros a el agua</value>
+        public int GetWaterShot
+        {
+            get
+            {
+                return this.waterShot.WaterShotCount;
+            }
+        }
         /// <summary>
         /// Propiedad para acceder al jugador inicial de la partida
         /// </summary>
@@ -108,6 +134,8 @@ namespace PII_ENTREGAFINAL_G8.src.Library
             this.Inactive_Player = player2;
             this.playersList.Add(player1);
             this.playersList.Add(player2);
+            shipShot = new ShipShot();
+            waterShot = new WaterShot();
         }
 
         /// <summary>
@@ -138,10 +166,12 @@ namespace PII_ENTREGAFINAL_G8.src.Library
                 if (resp == "Nuestros satelites 🛰 nos indican que tu misil ha dado en el blanco, el enemigo esta en apuros.\n Es el turno de tu enemigo 😨." || resp == "Capitán, se le informa que ha hundido el barco enemigo 😎. Felicitaciones 👌, vamos por buen camino.")
                 {
                     Active_Player.MakeShot(coord, "❌");
+                    this.shipShot.AddCount();
                 }
                 else
                 {
                     Active_Player.MakeShot(coord, "⭕️");
+                    this.waterShot.AddCount();
                 }
             }
             catch
@@ -236,6 +266,7 @@ namespace PII_ENTREGAFINAL_G8.src.Library
             }
             return this.GameStatus;
         }
+
 
 
     }

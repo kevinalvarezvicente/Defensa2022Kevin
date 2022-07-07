@@ -400,6 +400,18 @@
             Atributo de la partida, el oponente
             </summary>
         </member>
+        <member name="P:PII_ENTREGAFINAL_G8.src.Library.Game.GetShipShot">
+            <summary>
+            Accede a ShipShot
+            </summary>
+            <value>retorna la cantidad de tiros a barcos</value>
+        </member>
+        <member name="P:PII_ENTREGAFINAL_G8.src.Library.Game.GetWaterShot">
+            <summary>
+            Accede a WaterShot
+            </summary>
+            <value>retorna la cantidad de tiros a el agua</value>
+        </member>
         <member name="P:PII_ENTREGAFINAL_G8.src.Library.Game.Active_Player">
             <summary>
             Propiedad para acceder al jugador inicial de la partida
@@ -943,6 +955,62 @@
             <param name="param1"></param>
             <param name="param2"></param>
             <typeparam name="T">Es el tipo, tal que sea genérico</typeparam>
+        </member>
+        <member name="T:Game_Logic.Shot.ShipShot">
+            <summary>
+            Clase que gestiona los tiros hechos a barcos.
+            </summary>
+        </member>
+        <member name="M:Game_Logic.Shot.ShipShot.#ctor">
+            <summary>
+            Constructor de la clase ShipShot que hereda el constructor de suu padre.
+            </summary>
+        </member>
+        <member name="M:Game_Logic.Shot.ShipShot.AddCount">
+            <summary>
+            Metodo que cuenta la cantidad de tiros al agua hechos por ambos jugadores
+            </summary>
+        </member>
+        <member name="P:Game_Logic.Shot.ShipShot.ShipShopCount">
+            <summary>
+            Obtiene la cantidad de tiros a barcos realizados.
+            </summary>
+        </member>
+        <member name="T:Game_Logic.Shot.WaterShot">
+            <summary>
+            Clase que gestiona los tiros hechos al agua.
+            </summary>
+        </member>
+        <member name="M:Game_Logic.Shot.WaterShot.#ctor">
+            <summary>
+            Constructor de la clase WaterShot que hereda el constructor de suu padre.
+            </summary>
+        </member>
+        <member name="M:Game_Logic.Shot.WaterShot.AddCount">
+            <summary>
+            Metodo que cuenta la cantidad de tiros al agua hechos por ambos jugadores
+            </summary>
+        </member>
+        <member name="P:Game_Logic.Shot.WaterShot.WaterShotCount">
+            <summary>
+            Obtiene la cantidad de tiros al agua realizados.
+            </summary>
+        </member>
+        <member name="T:Game_Logic.ShotC">
+            <summary>
+            Clase de tipo abstracta ShotC que sera heredada por otros tipos de tiros para sobre escribir
+            sus metodos.
+            </summary>
+        </member>
+        <member name="M:Game_Logic.ShotC.#ctor">
+            <summary>
+            Conostructor de la clase, nos e piden parametros
+            </summary>
+        </member>
+        <member name="M:Game_Logic.ShotC.AddCount">
+            <summary>
+            Metodo en blanco que sera reescrito.
+            </summary>
         </member>
     </members>
 </doc>

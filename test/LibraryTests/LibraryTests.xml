@@ -350,6 +350,31 @@
             Testea coordenada no fue disparada
             </summary>
         </member>
+        <member name="M:LibraryTests.ShotCTest.Setup">
+            <summary>
+            Suimulamos la creacion de un juego con sus correspondientes objetos.
+            </summary>
+        </member>
+        <member name="M:LibraryTests.ShotCTest.AddCountWaterShot">
+            <summary>
+                Testeo del metodo AddCount de la clase WaterShot
+            </summary>
+        </member>
+        <member name="M:LibraryTests.ShotCTest.AddCountShipShot">
+            <summary>
+                Testeo del metodo AddCount de la clase ShipShot
+            </summary>
+        </member>
+        <member name="M:LibraryTests.ShotCTest.AddCountWaterShotGame">
+            <summary>
+                Testeo de tiro a agua de un player.
+            </summary>
+        </member>
+        <member name="M:LibraryTests.ShotCTest.AddCountShipShotGame">
+            <summary>
+                Testeo el tiro a barco de un player.
+            </summary>
+        </member>
         <member name="T:LibraryTests.UtilsTests">
             <summary>
             Se hace test para los métodos de la clase Utilidades
